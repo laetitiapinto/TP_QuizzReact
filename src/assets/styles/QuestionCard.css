@@ -1,0 +1,20 @@
+.box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box>* {
+    padding: 5px 0;
+    flex: 0 0 400px;
+    border: solid 1px #004aad;
+    margin: 10px auto;
+}
+
+.box-title {
+    font-weight: bold;
+}
+
+.box-footer>a {
+    color: #004aad;
+    margin: 0 3px;
+}

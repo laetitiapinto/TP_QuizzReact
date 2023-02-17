@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import './assets/styles/App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Route, Routes } from 'react-router-dom';
+import Banniere from './components/Banniere';
+import Quiz from './components/Quiz';
+import AjoutQuestion from './components/AjoutQuestion';
+import EditQuestion from './components/EditQuestion';
+import SuppressionQuestion from './components/SuppressionQuestion';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App container">
+      <Banniere />
+      <Routes>
+        <Route path='/' element={<Quiz />} />
+        <Route path='/ajout' element={<AjoutQuestion />} />
+        <Route path='/edit/:id' element={<EditQuestion />} />
+        <Route path='/suppression/:id' element={<SuppressionQuestion />} />
+      </Routes>
+
     </div>
   );
 }
